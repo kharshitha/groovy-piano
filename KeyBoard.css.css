@@ -1,0 +1,33 @@
+.key-board-container {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.custom {
+    background-image: url(../RequiredFilesTask/KeyBoardMusic/background2.jfif);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+@keyframes example {
+    from {border-color:transparent;}
+    to {border-color: orange;}
+}
+.clickedRecord
+{
+    animation-name: changeText;
+    animation-duration: 1000ms;
+}
+.clicked
+{
+    -webkit-animation-name: example;
+    animation-name: example;
+    animation-duration: 100ms;
+    animation-delay: 0ms;
+}
+.custombtn
+{
+    background-color:transparent;
+    border-width:thick;
+}

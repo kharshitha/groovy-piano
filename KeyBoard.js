@@ -17,6 +17,7 @@ function storing() {
 }
 function recording() {
     listOfKeys.clear;
+    localStorage.removeItem("Keys");
     document.getElementById('recordBtn').innerHTML = "Recording.....";
     alert("keys are being recorded");
 }

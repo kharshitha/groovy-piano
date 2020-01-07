@@ -27,7 +27,7 @@ function play() {
     var len = listOfKeys.length;
     if(listOfKeysCount==0)
     {
-        alert("playing..."+listOfKeys);
+        alert("playing..."+localStorage.getItem('keys'));
     }
     if (listOfKeysCount < len) {
         var element = listOfKeys[listOfKeysCount].toLowerCase();

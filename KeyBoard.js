@@ -1,5 +1,6 @@
 var listOfKeys = [];
-var i = 0;
+var listOfKeysCount = 0;
+
 document.onkeydown = function Sound(e) {
     var element = e.key.toLowerCase();
     document.getElementById(element).click();
@@ -19,19 +20,21 @@ function recording() {
     document.getElementById('recordBtn').innerHTML = "Recording.....";
     alert("keys are being recorded");
 }
-
 function playNow(ctrl) {
     new Audio(`${ctrl.getAttribute("data-audio")}.wav`).play();
 }
 function play() {
     var len = listOfKeys.length;
-    if (i < len) {
-        var element = listOfKeys[i].toLowerCase();
-        //debugger;
+    if(listOfKeysCount==0)
+    {
+        alert("playing..."+listOfKeys);
+    }
+    if (listOfKeysCount < len) {
+        var element = listOfKeys[listOfKeysCount].toLowerCase();
         document.getElementById(element).click();
         document.getElementById(element).classList.add('clicked');
         setTimeout(function () { document.getElementById(element).classList.remove('clicked'); }, 1000);
-        i = i + 1;
+        listOfKeysCount = listOfKeysCount + 1;
         setTimeout(function () { play(); }, 1000);
     }
 

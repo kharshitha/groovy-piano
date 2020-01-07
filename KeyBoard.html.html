@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/KeyBoard.css">
+    
+    <!-- <script src="../RequiredFilesTask/KeyBoardMusic/sounds/clap.wav"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+</head>
+
+<body class="custom" onload="storageElements()">
+    <div class="container" id="windowspace">
+        <div>
+            <button onclick="store()" id="recordbtn"class="btn btn-default btn-lg text-wrap keys-btn custombtn"
+                style="left:50%;position: absolute;top: 10%;border-width: thick;border-color:orange;"><strong>Record</strong></button>
+                <textarea id="textarea" style="left:70%;position: absolute;top: 10%;border-width: thick;border-color:orange"></textarea>
+            <div class=" key-board-container px-2">
+                <button type="button" class="btn btn-default btn-lg text-wrap keys-btn custombtn" id="a"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/clap"
+                    onclick="playNow(this);"><strong>A</strong><br><small>clap</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="s"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/hihat"
+                    onclick="playNow(this);"><strong>S</strong><br><small>hihat</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="d"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/kick"
+                    onclick="playNow(this)"><strong>D</strong><br><small>kick</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="f"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/openhat"
+                    onclick="playNow(this)"><strong>F</strong><br><small>openhat</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="g"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/boom"
+                    onclick="playNow(this)"><strong>G</strong><br><small>boom</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="h"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/ride"
+                    onclick="playNow(this)"><strong>H</strong><br><small>ride</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="j"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/snare"
+                    onclick="playNow(this)"><strong>J</strong><br><small>snare</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="k"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/tom"
+                    onclick="playNow(this)"><strong>K</strong><br><small>tom</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="l"
+                    data-audio="../RequiredFilesTask/KeyBoardMusic/sounds/tink"
+                    onclick="playNow(this)"><strong>L</strong><br><small>tink</small></button>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/KeyBoard.js"></script>
+</body>
+
+</html>

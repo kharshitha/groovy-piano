@@ -5,52 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="KeyBoard.css">
-    
+
     <!-- <script src="../RequiredFilesTask/KeyBoardMusic/sounds/clap.wav"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 </head>
 
-<body class="custom" >
+<body class="custom">
     <div class="container" id="windowspace">
         <div>
             <button onclick="recording()" id="recordBtn"
-            class="btn btn-default btn-lg text-wrap keys-btn custombtn customRecordPlay"><strong>Record</strong></button>
+                class="btn btn-default btn-lg text-wrap keys-btn custombtn customRecordPlay"><strong>Record</strong></button>
             <button onclick="storing()" id="stopBtn"
-            class="btn btn-default btn-lg text-wrap keys-btn custombtn customRecordPlay"><strong>Stop</strong></button>
-        <button onclick="play()" id="playBtn"
-            class="btn btn-default btn-lg text-wrap keys-btn custombtn customRecordPlay"><strong>play</strong></button>
+                class="btn btn-default btn-lg text-wrap keys-btn custombtn customRecordPlay"><strong>Stop</strong></button>
+            <button onclick="play()" id="playBtn"
+                class="btn btn-default btn-lg text-wrap keys-btn custombtn customRecordPlay"><strong>play</strong></button>
             <div class=" key-board-container px-2">
                 <button type="button" class="btn btn-default btn-lg text-wrap keys-btn custombtn" id="a"
-                    data-audio="clap"
-                    onclick="playNow(this);"><strong>A</strong><br><small>clap</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="s"
-                    data-audio="hihat"
+                    data-audio="clap" onclick="playNow(this);"><strong>A</strong><br><small>clap</small></button>
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="s" data-audio="hihat"
                     onclick="playNow(this);"><strong>S</strong><br><small>hihat</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="d"
-                    data-audio="kick"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="d" data-audio="kick"
                     onclick="playNow(this)"><strong>D</strong><br><small>kick</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="f"
-                    data-audio="openhat"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="f" data-audio="openhat"
                     onclick="playNow(this)"><strong>F</strong><br><small>openhat</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="g"
-                    data-audio="boom"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="g" data-audio="boom"
                     onclick="playNow(this)"><strong>G</strong><br><small>boom</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="h"
-                    data-audio="ride"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="h" data-audio="ride"
                     onclick="playNow(this)"><strong>H</strong><br><small>ride</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="j"
-                    data-audio="snare"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="j" data-audio="snare"
                     onclick="playNow(this)"><strong>J</strong><br><small>snare</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="k"
-                    data-audio="tom"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="k" data-audio="tom"
                     onclick="playNow(this)"><strong>K</strong><br><small>tom</small></button>
-                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="l"
-                    data-audio="tink"
+                <button type="button" class="btn btn-default btn-lg text-wrap custombtn" id="l" data-audio="tink"
                     onclick="playNow(this)"><strong>L</strong><br><small>tink</small></button>
             </div>
         </div>
     </div>
     <script src="KeyBoard.js"></script>
-</body>
+    <script>
+        function clickCounter() {
+            if (typeof (Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
 
+    <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+    <div id="result"></div>
+    <p>Click the button to see the counter increase.</p>
+    <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+</body>
 </html>

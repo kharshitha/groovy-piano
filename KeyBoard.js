@@ -4,11 +4,11 @@ var listOfKeysCount = 0;
 document.onkeydown = function Sound(e) {
     var element = e.key.toLowerCase();
     document.getElementById(element).click();
-    document.getElementById(element).classList.add('clicked');
-    setTimeout(function () { document.getElementById(element).classList.remove('clicked'); }, 100);
-    if (document.getElementById('recordBtn').innerHTML == "Recording.....") {
-        listOfKeys.push(element.toUpperCase());
-    }
+    // document.getElementById(element).classList.add('clicked');
+    // setTimeout(function () { document.getElementById(element).classList.remove('clicked'); }, 100);
+    // if (document.getElementById('recordBtn').innerHTML == "Recording.....") {
+    //     listOfKeys.push(element.toUpperCase());
+    // }
 }
 function storing() {
     localStorage.setItem("Keys", JSON.stringify(listOfKeys));
